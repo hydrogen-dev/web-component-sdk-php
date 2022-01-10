@@ -1,6 +1,6 @@
 <?php
 /**
- * PageClient_Test
+ * PageCard_Test
  *
  * PHP version 5
  *
@@ -30,7 +30,7 @@
 namespace com\hydrogen\admin;
 
 /**
- * PageClient_Test Class Doc Comment
+ * PageCard_Test Class Doc Comment
  *
  * @category    Class
  * @description Page Object
@@ -38,7 +38,7 @@ namespace com\hydrogen\admin;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PageClient_Test extends \PHPUnit_Framework_TestCase
+class PageCard_Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class PageClient_Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PageClient_"
+     * Test "PageCard_"
      */
-    public function testPageClient_()
+    public function testPageCard_()
     {
     }
 

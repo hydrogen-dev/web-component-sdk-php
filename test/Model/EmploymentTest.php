@@ -1,6 +1,6 @@
 <?php
 /**
- * PageClient_Test
+ * EmploymentTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace com\hydrogen\admin;
 
 /**
- * PageClient_Test Class Doc Comment
+ * EmploymentTest Class Doc Comment
  *
  * @category    Class
- * @description Page Object
+ * @description Employment Object
  * @package     com\hydrogen\admin
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PageClient_Test extends \PHPUnit_Framework_TestCase
+class EmploymentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,72 +70,37 @@ class PageClient_Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PageClient_"
+     * Test "Employment"
      */
-    public function testPageClient_()
+    public function testEmployment()
     {
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "employer"
      */
-    public function testPropertyContent()
+    public function testPropertyEmployer()
     {
     }
 
     /**
-     * Test attribute "first"
+     * Test attribute "employment_status"
      */
-    public function testPropertyFirst()
+    public function testPropertyEmploymentStatus()
     {
     }
 
     /**
-     * Test attribute "last"
+     * Test attribute "job_title"
      */
-    public function testPropertyLast()
+    public function testPropertyJobTitle()
     {
     }
 
     /**
-     * Test attribute "number"
+     * Test attribute "occupation"
      */
-    public function testPropertyNumber()
-    {
-    }
-
-    /**
-     * Test attribute "number_of_elements"
-     */
-    public function testPropertyNumberOfElements()
-    {
-    }
-
-    /**
-     * Test attribute "size"
-     */
-    public function testPropertySize()
-    {
-    }
-
-    /**
-     * Test attribute "sort"
-     */
-    public function testPropertySort()
-    {
-    }
-
-    /**
-     * Test attribute "total_elements"
-     */
-    public function testPropertyTotalElements()
-    {
-    }
-
-    /**
-     * Test attribute "total_pages"
-     */
-    public function testPropertyTotalPages()
+    public function testPropertyOccupation()
     {
     }
 }

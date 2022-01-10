@@ -1,6 +1,6 @@
 <?php
 /**
- * PageClient_Test
+ * CardAddressTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace com\hydrogen\admin;
 
 /**
- * PageClient_Test Class Doc Comment
+ * CardAddressTest Class Doc Comment
  *
  * @category    Class
- * @description Page Object
+ * @description CardAddress Object
  * @package     com\hydrogen\admin
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PageClient_Test extends \PHPUnit_Framework_TestCase
+class CardAddressTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,72 +70,58 @@ class PageClient_Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PageClient_"
+     * Test "CardAddress"
      */
-    public function testPageClient_()
+    public function testCardAddress()
     {
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "address_line1"
      */
-    public function testPropertyContent()
+    public function testPropertyAddressLine1()
     {
     }
 
     /**
-     * Test attribute "first"
+     * Test attribute "address_line2"
      */
-    public function testPropertyFirst()
+    public function testPropertyAddressLine2()
     {
     }
 
     /**
-     * Test attribute "last"
+     * Test attribute "city"
      */
-    public function testPropertyLast()
+    public function testPropertyCity()
     {
     }
 
     /**
-     * Test attribute "number"
+     * Test attribute "country"
      */
-    public function testPropertyNumber()
+    public function testPropertyCountry()
     {
     }
 
     /**
-     * Test attribute "number_of_elements"
+     * Test attribute "postalcode"
      */
-    public function testPropertyNumberOfElements()
+    public function testPropertyPostalcode()
     {
     }
 
     /**
-     * Test attribute "size"
+     * Test attribute "state"
      */
-    public function testPropertySize()
+    public function testPropertyState()
     {
     }
 
     /**
-     * Test attribute "sort"
+     * Test attribute "type"
      */
-    public function testPropertySort()
-    {
-    }
-
-    /**
-     * Test attribute "total_elements"
-     */
-    public function testPropertyTotalElements()
-    {
-    }
-
-    /**
-     * Test attribute "total_pages"
-     */
-    public function testPropertyTotalPages()
+    public function testPropertyType()
     {
     }
 }

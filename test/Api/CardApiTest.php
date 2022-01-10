@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientApiTest
+ * CardApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \com\hydrogen\admin\ApiException;
 use \com\hydrogen\admin\ObjectSerializer;
 
 /**
- * ClientApiTest Class Doc Comment
+ * CardApiTest Class Doc Comment
  *
  * @category Class
  * @package  com\hydrogen\admin
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ClientApiTest extends \PHPUnit_Framework_TestCase
+class CardApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,42 +72,42 @@ class ClientApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createClientUsingPost
+     * Test case for createCardUsingPost
      *
-     * Create a client.
+     * Create a card request.
      *
      */
-    public function testCreateClientUsingPost()
+    public function testCreateCardUsingPost()
     {
     }
 
     /**
-     * Test case for getClientAllUsingGet
+     * Test case for getCardAllUsingGet
      *
-     * List all clients.
+     * List all card requests.
      *
      */
-    public function testGetClientAllUsingGet()
+    public function testGetCardAllUsingGet()
     {
     }
 
     /**
-     * Test case for getClientUsingGet
+     * Test case for getCardUsingGet
      *
-     * Retrieve a client.
+     * Retrieve a card request.
      *
      */
-    public function testGetClientUsingGet()
+    public function testGetCardUsingGet()
     {
     }
 
     /**
-     * Test case for updateClientUsingPut
+     * Test case for updateCardUsingPut
      *
-     * Update a client.
+     * Update a card request.
      *
      */
-    public function testUpdateClientUsingPut()
+    public function testUpdateCardUsingPut()
     {
     }
 }

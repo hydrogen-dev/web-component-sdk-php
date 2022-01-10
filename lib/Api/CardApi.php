@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientApi
+ * CardApi
  * PHP version 5
  *
  * @category Class
@@ -25,7 +25,6 @@
  * https://github.com/swagger-api/swagger-codegen
  * Do not edit the class manually.
  */
-
 namespace com\hydrogen\admin\Api;
 
 use GuzzleHttp\Client;
@@ -40,14 +39,14 @@ use com\hydrogen\admin\HeaderSelector;
 use com\hydrogen\admin\ObjectSerializer;
 
 /**
- * ClientApi Class Doc Comment
+ * CardApi Class Doc Comment
  *
  * @category Class
  * @package  com\hydrogen\admin
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ClientApi
+class CardApi
 {
     /**
      * @var ClientInterface
@@ -84,7 +83,6 @@ class ClientApi
             }
             $this->config->setHost($app_token_config['basePath']);
             Configuration::getDefaultConfiguration()->setHost($app_token_config['basePath']);
-
             if ($app_token_config['auth_type'] && strtolower($app_token_config['auth_type']) === "client_credentials") {
                 $passwordTokenData = \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createClientCredential($app_token_config['clientId'], $app_token_config['clientSecret']);
                 $this->config->setAccessToken($passwordTokenData->getAccessToken());
@@ -107,37 +105,37 @@ class ClientApi
     }
 
     /**
-     * Operation createClientUsingPost
+     * Operation createCardUsingPost
      *
-     * Create a client
+     * Create a card request
      *
-     * @param  \com\hydrogen\admin\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\admin\Model\Card $card_request cardRequest (required)
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\admin\Model\Client
+     * @return \com\hydrogen\admin\Model\Card
      */
-    public function createClientUsingPost($client_request)
+    public function createCardUsingPost($card_request)
     {
-        list($response) = $this->createClientUsingPostWithHttpInfo($client_request);
+        list($response) = $this->createCardUsingPostWithHttpInfo($card_request);
         return $response;
     }
 
     /**
-     * Operation createClientUsingPostWithHttpInfo
+     * Operation createCardUsingPostWithHttpInfo
      *
-     * Create a client
+     * Create a card request
      *
-     * @param  \com\hydrogen\admin\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\admin\Model\Card $card_request cardRequest (required)
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\admin\Model\Client, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\admin\Model\Card, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createClientUsingPostWithHttpInfo($client_request)
+    public function createCardUsingPostWithHttpInfo($card_request)
     {
-        $returnType = '\com\hydrogen\admin\Model\Client';
-        $request = $this->createClientUsingPostRequest($client_request);
+        $returnType = '\com\hydrogen\admin\Model\Card';
+        $request = $this->createCardUsingPostRequest($card_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -188,7 +186,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\admin\Model\Client',
+                        '\com\hydrogen\admin\Model\Card',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -199,18 +197,18 @@ class ClientApi
     }
 
     /**
-     * Operation createClientUsingPostAsync
+     * Operation createCardUsingPostAsync
      *
-     * Create a client
+     * Create a card request
      *
-     * @param  \com\hydrogen\admin\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\admin\Model\Card $card_request cardRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createClientUsingPostAsync($client_request)
+    public function createCardUsingPostAsync($card_request)
     {
-        return $this->createClientUsingPostAsyncWithHttpInfo($client_request)
+        return $this->createCardUsingPostAsyncWithHttpInfo($card_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -219,19 +217,19 @@ class ClientApi
     }
 
     /**
-     * Operation createClientUsingPostAsyncWithHttpInfo
+     * Operation createCardUsingPostAsyncWithHttpInfo
      *
-     * Create a client
+     * Create a card request
      *
-     * @param  \com\hydrogen\admin\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\admin\Model\Card $card_request cardRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createClientUsingPostAsyncWithHttpInfo($client_request)
+    public function createCardUsingPostAsyncWithHttpInfo($card_request)
     {
-        $returnType = '\com\hydrogen\admin\Model\Client';
-        $request = $this->createClientUsingPostRequest($client_request);
+        $returnType = '\com\hydrogen\admin\Model\Card';
+        $request = $this->createCardUsingPostRequest($card_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -271,23 +269,23 @@ class ClientApi
     }
 
     /**
-     * Create request for operation 'createClientUsingPost'
+     * Create request for operation 'createCardUsingPost'
      *
-     * @param  \com\hydrogen\admin\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\admin\Model\Card $card_request cardRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createClientUsingPostRequest($client_request)
+    protected function createCardUsingPostRequest($card_request)
     {
-        // verify the required parameter 'client_request' is set
-        if ($client_request === null || (is_array($client_request) && count($client_request) === 0)) {
+        // verify the required parameter 'card_request' is set
+        if ($card_request === null || (is_array($card_request) && count($card_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $client_request when calling createClientUsingPost'
+                'Missing the required parameter $card_request when calling createCardUsingPost'
             );
         }
 
-        $resourcePath = '/nucleus/v1/client';
+        $resourcePath = '/nucleus/v1/card';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -298,8 +296,8 @@ class ClientApi
 
         // body params
         $_tempBody = null;
-        if (isset($client_request)) {
-            $_tempBody = $client_request;
+        if (isset($card_request)) {
+            $_tempBody = $card_request;
         }
 
         if ($multipart) {
@@ -375,9 +373,9 @@ class ClientApi
     }
 
     /**
-     * Operation getClientAllUsingGet
+     * Operation getCardAllUsingGet
      *
-     * List all clients
+     * List all card requests
      *
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $filter filter (optional)
@@ -387,18 +385,18 @@ class ClientApi
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\admin\Model\PageClient_
+     * @return \com\hydrogen\admin\Model\PageCard_
      */
-    public function getClientAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
+    public function getCardAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        list($response) = $this->getClientAllUsingGetWithHttpInfo($ascending, $filter, $order_by, $page, $size);
+        list($response) = $this->getCardAllUsingGetWithHttpInfo($ascending, $filter, $order_by, $page, $size);
         return $response;
     }
 
     /**
-     * Operation getClientAllUsingGetWithHttpInfo
+     * Operation getCardAllUsingGetWithHttpInfo
      *
-     * List all clients
+     * List all card requests
      *
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $filter filter (optional)
@@ -408,12 +406,12 @@ class ClientApi
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\admin\Model\PageClient_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\admin\Model\PageCard_, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClientAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
+    public function getCardAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\admin\Model\PageClient_';
-        $request = $this->getClientAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
+        $returnType = '\com\hydrogen\admin\Model\PageCard_';
+        $request = $this->getCardAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
             $options = $this->createHttpClientOption();
@@ -464,7 +462,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\admin\Model\PageClient_',
+                        '\com\hydrogen\admin\Model\PageCard_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -475,9 +473,9 @@ class ClientApi
     }
 
     /**
-     * Operation getClientAllUsingGetAsync
+     * Operation getCardAllUsingGetAsync
      *
-     * List all clients
+     * List all card requests
      *
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $filter filter (optional)
@@ -488,9 +486,9 @@ class ClientApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientAllUsingGetAsync($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
+    public function getCardAllUsingGetAsync($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        return $this->getClientAllUsingGetAsyncWithHttpInfo($ascending, $filter, $order_by, $page, $size)
+        return $this->getCardAllUsingGetAsyncWithHttpInfo($ascending, $filter, $order_by, $page, $size)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -499,9 +497,9 @@ class ClientApi
     }
 
     /**
-     * Operation getClientAllUsingGetAsyncWithHttpInfo
+     * Operation getCardAllUsingGetAsyncWithHttpInfo
      *
-     * List all clients
+     * List all card requests
      *
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $filter filter (optional)
@@ -512,10 +510,10 @@ class ClientApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
+    public function getCardAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\admin\Model\PageClient_';
-        $request = $this->getClientAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
+        $returnType = '\com\hydrogen\admin\Model\PageCard_';
+        $request = $this->getCardAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -555,7 +553,7 @@ class ClientApi
     }
 
     /**
-     * Create request for operation 'getClientAllUsingGet'
+     * Create request for operation 'getCardAllUsingGet'
      *
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $filter filter (optional)
@@ -566,10 +564,10 @@ class ClientApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getClientAllUsingGetRequest($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
+    protected function getCardAllUsingGetRequest($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
 
-        $resourcePath = '/nucleus/v1/client';
+        $resourcePath = '/nucleus/v1/card';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -674,37 +672,37 @@ class ClientApi
     }
 
     /**
-     * Operation getClientUsingGet
+     * Operation getCardUsingGet
      *
-     * Retrieve a client
+     * Retrieve a card request
      *
-     * @param  string $client_id UUID client_id (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\admin\Model\Client
+     * @return \com\hydrogen\admin\Model\Card
      */
-    public function getClientUsingGet($client_id)
+    public function getCardUsingGet($card_id)
     {
-        list($response) = $this->getClientUsingGetWithHttpInfo($client_id);
+        list($response) = $this->getCardUsingGetWithHttpInfo($card_id);
         return $response;
     }
 
     /**
-     * Operation getClientUsingGetWithHttpInfo
+     * Operation getCardUsingGetWithHttpInfo
      *
-     * Retrieve a client
+     * Retrieve a card request
      *
-     * @param  string $client_id UUID client_id (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\admin\Model\Client, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\admin\Model\Card, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClientUsingGetWithHttpInfo($client_id)
+    public function getCardUsingGetWithHttpInfo($card_id)
     {
-        $returnType = '\com\hydrogen\admin\Model\Client';
-        $request = $this->getClientUsingGetRequest($client_id);
+        $returnType = '\com\hydrogen\admin\Model\Card';
+        $request = $this->getCardUsingGetRequest($card_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -755,7 +753,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\admin\Model\Client',
+                        '\com\hydrogen\admin\Model\Card',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -766,18 +764,18 @@ class ClientApi
     }
 
     /**
-     * Operation getClientUsingGetAsync
+     * Operation getCardUsingGetAsync
      *
-     * Retrieve a client
+     * Retrieve a card request
      *
-     * @param  string $client_id UUID client_id (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientUsingGetAsync($client_id)
+    public function getCardUsingGetAsync($card_id)
     {
-        return $this->getClientUsingGetAsyncWithHttpInfo($client_id)
+        return $this->getCardUsingGetAsyncWithHttpInfo($card_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -786,19 +784,19 @@ class ClientApi
     }
 
     /**
-     * Operation getClientUsingGetAsyncWithHttpInfo
+     * Operation getCardUsingGetAsyncWithHttpInfo
      *
-     * Retrieve a client
+     * Retrieve a card request
      *
-     * @param  string $client_id UUID client_id (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientUsingGetAsyncWithHttpInfo($client_id)
+    public function getCardUsingGetAsyncWithHttpInfo($card_id)
     {
-        $returnType = '\com\hydrogen\admin\Model\Client';
-        $request = $this->getClientUsingGetRequest($client_id);
+        $returnType = '\com\hydrogen\admin\Model\Card';
+        $request = $this->getCardUsingGetRequest($card_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -838,23 +836,23 @@ class ClientApi
     }
 
     /**
-     * Create request for operation 'getClientUsingGet'
+     * Create request for operation 'getCardUsingGet'
      *
-     * @param  string $client_id UUID client_id (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getClientUsingGetRequest($client_id)
+    protected function getCardUsingGetRequest($card_id)
     {
-        // verify the required parameter 'client_id' is set
-        if ($client_id === null || (is_array($client_id) && count($client_id) === 0)) {
+        // verify the required parameter 'card_id' is set
+        if ($card_id === null || (is_array($card_id) && count($card_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $client_id when calling getClientUsingGet'
+                'Missing the required parameter $card_id when calling getCardUsingGet'
             );
         }
 
-        $resourcePath = '/nucleus/v1/client/{client_id}';
+        $resourcePath = '/nucleus/v1/card/{card_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -863,10 +861,10 @@ class ClientApi
 
 
         // path params
-        if ($client_id !== null) {
+        if ($card_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'client_id' . '}',
-                ObjectSerializer::toPathValue($client_id),
+                '{' . 'card_id' . '}',
+                ObjectSerializer::toPathValue($card_id),
                 $resourcePath
             );
         }
@@ -947,39 +945,39 @@ class ClientApi
     }
 
     /**
-     * Operation updateClientUsingPut
+     * Operation updateCardUsingPut
      *
-     * Update a client
+     * Update a card request
      *
-     * @param  object $client client (required)
-     * @param  string $client_id UUID client_id (required)
+     * @param  object $card card (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\admin\Model\Client
+     * @return \com\hydrogen\admin\Model\Card
      */
-    public function updateClientUsingPut($client, $client_id)
+    public function updateCardUsingPut($card, $card_id)
     {
-        list($response) = $this->updateClientUsingPutWithHttpInfo($client, $client_id);
+        list($response) = $this->updateCardUsingPutWithHttpInfo($card, $card_id);
         return $response;
     }
 
     /**
-     * Operation updateClientUsingPutWithHttpInfo
+     * Operation updateCardUsingPutWithHttpInfo
      *
-     * Update a client
+     * Update a card request
      *
-     * @param  object $client client (required)
-     * @param  string $client_id UUID client_id (required)
+     * @param  object $card card (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \com\hydrogen\admin\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\admin\Model\Client, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\admin\Model\Card, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateClientUsingPutWithHttpInfo($client, $client_id)
+    public function updateCardUsingPutWithHttpInfo($card, $card_id)
     {
-        $returnType = '\com\hydrogen\admin\Model\Client';
-        $request = $this->updateClientUsingPutRequest($client, $client_id);
+        $returnType = '\com\hydrogen\admin\Model\Card';
+        $request = $this->updateCardUsingPutRequest($card, $card_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1030,7 +1028,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\admin\Model\Client',
+                        '\com\hydrogen\admin\Model\Card',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1041,19 +1039,19 @@ class ClientApi
     }
 
     /**
-     * Operation updateClientUsingPutAsync
+     * Operation updateCardUsingPutAsync
      *
-     * Update a client
+     * Update a card request
      *
-     * @param  object $client client (required)
-     * @param  string $client_id UUID client_id (required)
+     * @param  object $card card (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateClientUsingPutAsync($client, $client_id)
+    public function updateCardUsingPutAsync($card, $card_id)
     {
-        return $this->updateClientUsingPutAsyncWithHttpInfo($client, $client_id)
+        return $this->updateCardUsingPutAsyncWithHttpInfo($card, $card_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1062,20 +1060,20 @@ class ClientApi
     }
 
     /**
-     * Operation updateClientUsingPutAsyncWithHttpInfo
+     * Operation updateCardUsingPutAsyncWithHttpInfo
      *
-     * Update a client
+     * Update a card request
      *
-     * @param  object $client client (required)
-     * @param  string $client_id UUID client_id (required)
+     * @param  object $card card (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateClientUsingPutAsyncWithHttpInfo($client, $client_id)
+    public function updateCardUsingPutAsyncWithHttpInfo($card, $card_id)
     {
-        $returnType = '\com\hydrogen\admin\Model\Client';
-        $request = $this->updateClientUsingPutRequest($client, $client_id);
+        $returnType = '\com\hydrogen\admin\Model\Card';
+        $request = $this->updateCardUsingPutRequest($card, $card_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1115,30 +1113,30 @@ class ClientApi
     }
 
     /**
-     * Create request for operation 'updateClientUsingPut'
+     * Create request for operation 'updateCardUsingPut'
      *
-     * @param  object $client client (required)
-     * @param  string $client_id UUID client_id (required)
+     * @param  object $card card (required)
+     * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateClientUsingPutRequest($client, $client_id)
+    protected function updateCardUsingPutRequest($card, $card_id)
     {
-        // verify the required parameter 'client' is set
-        if ($client === null || (is_array($client) && count($client) === 0)) {
+        // verify the required parameter 'card' is set
+        if ($card === null || (is_array($card) && count($card) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $client when calling updateClientUsingPut'
+                'Missing the required parameter $card when calling updateCardUsingPut'
             );
         }
-        // verify the required parameter 'client_id' is set
-        if ($client_id === null || (is_array($client_id) && count($client_id) === 0)) {
+        // verify the required parameter 'card_id' is set
+        if ($card_id === null || (is_array($card_id) && count($card_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $client_id when calling updateClientUsingPut'
+                'Missing the required parameter $card_id when calling updateCardUsingPut'
             );
         }
 
-        $resourcePath = '/nucleus/v1/client/{client_id}';
+        $resourcePath = '/nucleus/v1/card/{card_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1147,18 +1145,18 @@ class ClientApi
 
 
         // path params
-        if ($client_id !== null) {
+        if ($card_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'client_id' . '}',
-                ObjectSerializer::toPathValue($client_id),
+                '{' . 'card_id' . '}',
+                ObjectSerializer::toPathValue($card_id),
                 $resourcePath
             );
         }
 
         // body params
         $_tempBody = null;
-        if (isset($client)) {
-            $_tempBody = $client;
+        if (isset($card)) {
+            $_tempBody = $card;
         }
 
         if ($multipart) {
