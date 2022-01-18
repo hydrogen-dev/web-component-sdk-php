@@ -1,6 +1,6 @@
 <?php
 /**
- * AppToken
+ * Sort
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \com\hydrogen\admin\ObjectSerializer;
 
 /**
- * AppToken Class Doc Comment
+ * Sort Class Doc Comment
  *
  * @category Class
+ * @description Sort Object
  * @package  com\hydrogen\admin
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AppToken implements ModelInterface, ArrayAccess
+class Sort implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class AppToken implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AppToken';
+    protected static $swaggerModelName = 'Sort';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +58,12 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'app_name' => 'string',
-        'app_token' => 'string',
-        'create_date' => '\DateTime',
-        'id' => 'string',
-        'is_valid' => 'bool',
-        'tenant_name' => 'string',
-        'update_date' => '\DateTime',
-        'username' => 'string'
+        'ascending' => 'bool',
+        'descending' => 'bool',
+        'direction' => 'string',
+        'ignore_case' => 'bool',
+        'null_handling' => 'string',
+        'property' => 'string'
     ];
 
     /**
@@ -73,14 +72,12 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'app_name' => null,
-        'app_token' => null,
-        'create_date' => 'date-time',
-        'id' => 'uuid',
-        'is_valid' => null,
-        'tenant_name' => null,
-        'update_date' => 'date-time',
-        'username' => null
+        'ascending' => null,
+        'descending' => null,
+        'direction' => null,
+        'ignore_case' => null,
+        'null_handling' => null,
+        'property' => null
     ];
 
     /**
@@ -110,14 +107,12 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_name' => 'app_name',
-        'app_token' => 'app_token',
-        'create_date' => 'create_date',
-        'id' => 'id',
-        'is_valid' => 'is_valid',
-        'tenant_name' => 'tenant_name',
-        'update_date' => 'update_date',
-        'username' => 'username'
+        'ascending' => 'ascending',
+        'descending' => 'descending',
+        'direction' => 'direction',
+        'ignore_case' => 'ignore_case',
+        'null_handling' => 'null_handling',
+        'property' => 'property'
     ];
 
     /**
@@ -126,14 +121,12 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_name' => 'setAppName',
-        'app_token' => 'setAppToken',
-        'create_date' => 'setCreateDate',
-        'id' => 'setId',
-        'is_valid' => 'setIsValid',
-        'tenant_name' => 'setTenantName',
-        'update_date' => 'setUpdateDate',
-        'username' => 'setUsername'
+        'ascending' => 'setAscending',
+        'descending' => 'setDescending',
+        'direction' => 'setDirection',
+        'ignore_case' => 'setIgnoreCase',
+        'null_handling' => 'setNullHandling',
+        'property' => 'setProperty'
     ];
 
     /**
@@ -142,14 +135,12 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_name' => 'getAppName',
-        'app_token' => 'getAppToken',
-        'create_date' => 'getCreateDate',
-        'id' => 'getId',
-        'is_valid' => 'getIsValid',
-        'tenant_name' => 'getTenantName',
-        'update_date' => 'getUpdateDate',
-        'username' => 'getUsername'
+        'ascending' => 'getAscending',
+        'descending' => 'getDescending',
+        'direction' => 'getDirection',
+        'ignore_case' => 'getIgnoreCase',
+        'null_handling' => 'getNullHandling',
+        'property' => 'getProperty'
     ];
 
     /**
@@ -212,14 +203,12 @@ class AppToken implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_name'] = isset($data['app_name']) ? $data['app_name'] : null;
-        $this->container['app_token'] = isset($data['app_token']) ? $data['app_token'] : null;
-        $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
-        $this->container['tenant_name'] = isset($data['tenant_name']) ? $data['tenant_name'] : null;
-        $this->container['update_date'] = isset($data['update_date']) ? $data['update_date'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['ascending'] = isset($data['ascending']) ? $data['ascending'] : null;
+        $this->container['descending'] = isset($data['descending']) ? $data['descending'] : null;
+        $this->container['direction'] = isset($data['direction']) ? $data['direction'] : null;
+        $this->container['ignore_case'] = isset($data['ignore_case']) ? $data['ignore_case'] : null;
+        $this->container['null_handling'] = isset($data['null_handling']) ? $data['null_handling'] : null;
+        $this->container['property'] = isset($data['property']) ? $data['property'] : null;
     }
 
     /**
@@ -247,193 +236,145 @@ class AppToken implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets app_name
-     *
-     * @return string
-     */
-    public function getAppName()
-    {
-        return $this->container['app_name'];
-    }
-
-    /**
-     * Sets app_name
-     *
-     * @param string $app_name app_name
-     *
-     * @return $this
-     */
-    public function setAppName($app_name)
-    {
-        $this->container['app_name'] = $app_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets app_token
-     *
-     * @return string
-     */
-    public function getAppToken()
-    {
-        return $this->container['app_token'];
-    }
-
-    /**
-     * Sets app_token
-     *
-     * @param string $app_token app_token
-     *
-     * @return $this
-     */
-    public function setAppToken($app_token)
-    {
-        $this->container['app_token'] = $app_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets create_date
-     *
-     * @return \DateTime
-     */
-    public function getCreateDate()
-    {
-        return $this->container['create_date'];
-    }
-
-    /**
-     * Sets create_date
-     *
-     * @param \DateTime $create_date create_date
-     *
-     * @return $this
-     */
-    public function setCreateDate($create_date)
-    {
-        $this->container['create_date'] = $create_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_valid
+     * Gets ascending
      *
      * @return bool
      */
-    public function getIsValid()
+    public function getAscending()
     {
-        return $this->container['is_valid'];
+        return $this->container['ascending'];
     }
 
     /**
-     * Sets is_valid
+     * Sets ascending
      *
-     * @param bool $is_valid is_valid
+     * @param bool $ascending ascending
      *
      * @return $this
      */
-    public function setIsValid($is_valid)
+    public function setAscending($ascending)
     {
-        $this->container['is_valid'] = $is_valid;
+        $this->container['ascending'] = $ascending;
 
         return $this;
     }
 
     /**
-     * Gets tenant_name
+     * Gets descending
+     *
+     * @return bool
+     */
+    public function getDescending()
+    {
+        return $this->container['descending'];
+    }
+
+    /**
+     * Sets descending
+     *
+     * @param bool $descending descending
+     *
+     * @return $this
+     */
+    public function setDescending($descending)
+    {
+        $this->container['descending'] = $descending;
+
+        return $this;
+    }
+
+    /**
+     * Gets direction
      *
      * @return string
      */
-    public function getTenantName()
+    public function getDirection()
     {
-        return $this->container['tenant_name'];
+        return $this->container['direction'];
     }
 
     /**
-     * Sets tenant_name
+     * Sets direction
      *
-     * @param string $tenant_name tenant_name
+     * @param string $direction direction
      *
      * @return $this
      */
-    public function setTenantName($tenant_name)
+    public function setDirection($direction)
     {
-        $this->container['tenant_name'] = $tenant_name;
+        $this->container['direction'] = $direction;
 
         return $this;
     }
 
     /**
-     * Gets update_date
+     * Gets ignore_case
      *
-     * @return \DateTime
+     * @return bool
      */
-    public function getUpdateDate()
+    public function getIgnoreCase()
     {
-        return $this->container['update_date'];
+        return $this->container['ignore_case'];
     }
 
     /**
-     * Sets update_date
+     * Sets ignore_case
      *
-     * @param \DateTime $update_date update_date
+     * @param bool $ignore_case ignoreCase
      *
      * @return $this
      */
-    public function setUpdateDate($update_date)
+    public function setIgnoreCase($ignore_case)
     {
-        $this->container['update_date'] = $update_date;
+        $this->container['ignore_case'] = $ignore_case;
 
         return $this;
     }
 
     /**
-     * Gets username
+     * Gets null_handling
      *
      * @return string
      */
-    public function getUsername()
+    public function getNullHandling()
     {
-        return $this->container['username'];
+        return $this->container['null_handling'];
     }
 
     /**
-     * Sets username
+     * Sets null_handling
      *
-     * @param string $username username
+     * @param string $null_handling nullHandling
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setNullHandling($null_handling)
     {
-        $this->container['username'] = $username;
+        $this->container['null_handling'] = $null_handling;
+
+        return $this;
+    }
+
+    /**
+     * Gets property
+     *
+     * @return string
+     */
+    public function getProperty()
+    {
+        return $this->container['property'];
+    }
+
+    /**
+     * Sets property
+     *
+     * @param string $property property
+     *
+     * @return $this
+     */
+    public function setProperty($property)
+    {
+        $this->container['property'] = $property;
 
         return $this;
     }

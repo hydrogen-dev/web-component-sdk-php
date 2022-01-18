@@ -1,6 +1,6 @@
 <?php
 /**
- * AppToken
+ * PageCard_
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \com\hydrogen\admin\ObjectSerializer;
 
 /**
- * AppToken Class Doc Comment
+ * PageCard_ Class Doc Comment
  *
  * @category Class
+ * @description Page Object
  * @package  com\hydrogen\admin
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AppToken implements ModelInterface, ArrayAccess
+class PageCard_ implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class AppToken implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AppToken';
+    protected static $swaggerModelName = 'Page«Card»';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +58,15 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'app_name' => 'string',
-        'app_token' => 'string',
-        'create_date' => '\DateTime',
-        'id' => 'string',
-        'is_valid' => 'bool',
-        'tenant_name' => 'string',
-        'update_date' => '\DateTime',
-        'username' => 'string'
+        'content' => '\com\hydrogen\admin\Model\Card[]',
+        'first' => 'bool',
+        'last' => 'bool',
+        'number' => 'int',
+        'number_of_elements' => 'int',
+        'size' => 'int',
+        'sort' => '\com\hydrogen\admin\Model\Sort[]',
+        'total_elements' => 'int',
+        'total_pages' => 'int'
     ];
 
     /**
@@ -73,14 +75,15 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'app_name' => null,
-        'app_token' => null,
-        'create_date' => 'date-time',
-        'id' => 'uuid',
-        'is_valid' => null,
-        'tenant_name' => null,
-        'update_date' => 'date-time',
-        'username' => null
+        'content' => null,
+        'first' => null,
+        'last' => null,
+        'number' => 'int32',
+        'number_of_elements' => 'int32',
+        'size' => 'int32',
+        'sort' => null,
+        'total_elements' => 'int64',
+        'total_pages' => 'int32'
     ];
 
     /**
@@ -110,14 +113,15 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_name' => 'app_name',
-        'app_token' => 'app_token',
-        'create_date' => 'create_date',
-        'id' => 'id',
-        'is_valid' => 'is_valid',
-        'tenant_name' => 'tenant_name',
-        'update_date' => 'update_date',
-        'username' => 'username'
+        'content' => 'content',
+        'first' => 'first',
+        'last' => 'last',
+        'number' => 'number',
+        'number_of_elements' => 'number_of_elements',
+        'size' => 'size',
+        'sort' => 'sort',
+        'total_elements' => 'total_elements',
+        'total_pages' => 'total_pages'
     ];
 
     /**
@@ -126,14 +130,15 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_name' => 'setAppName',
-        'app_token' => 'setAppToken',
-        'create_date' => 'setCreateDate',
-        'id' => 'setId',
-        'is_valid' => 'setIsValid',
-        'tenant_name' => 'setTenantName',
-        'update_date' => 'setUpdateDate',
-        'username' => 'setUsername'
+        'content' => 'setContent',
+        'first' => 'setFirst',
+        'last' => 'setLast',
+        'number' => 'setNumber',
+        'number_of_elements' => 'setNumberOfElements',
+        'size' => 'setSize',
+        'sort' => 'setSort',
+        'total_elements' => 'setTotalElements',
+        'total_pages' => 'setTotalPages'
     ];
 
     /**
@@ -142,14 +147,15 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_name' => 'getAppName',
-        'app_token' => 'getAppToken',
-        'create_date' => 'getCreateDate',
-        'id' => 'getId',
-        'is_valid' => 'getIsValid',
-        'tenant_name' => 'getTenantName',
-        'update_date' => 'getUpdateDate',
-        'username' => 'getUsername'
+        'content' => 'getContent',
+        'first' => 'getFirst',
+        'last' => 'getLast',
+        'number' => 'getNumber',
+        'number_of_elements' => 'getNumberOfElements',
+        'size' => 'getSize',
+        'sort' => 'getSort',
+        'total_elements' => 'getTotalElements',
+        'total_pages' => 'getTotalPages'
     ];
 
     /**
@@ -212,14 +218,15 @@ class AppToken implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_name'] = isset($data['app_name']) ? $data['app_name'] : null;
-        $this->container['app_token'] = isset($data['app_token']) ? $data['app_token'] : null;
-        $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
-        $this->container['tenant_name'] = isset($data['tenant_name']) ? $data['tenant_name'] : null;
-        $this->container['update_date'] = isset($data['update_date']) ? $data['update_date'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['first'] = isset($data['first']) ? $data['first'] : null;
+        $this->container['last'] = isset($data['last']) ? $data['last'] : null;
+        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['number_of_elements'] = isset($data['number_of_elements']) ? $data['number_of_elements'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
+        $this->container['total_elements'] = isset($data['total_elements']) ? $data['total_elements'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
     }
 
     /**
@@ -247,193 +254,217 @@ class AppToken implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets app_name
+     * Gets content
      *
-     * @return string
+     * @return \com\hydrogen\admin\Model\Card[]
      */
-    public function getAppName()
+    public function getContent()
     {
-        return $this->container['app_name'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets app_name
+     * Sets content
      *
-     * @param string $app_name app_name
+     * @param \com\hydrogen\admin\Model\Card[] $content content
      *
      * @return $this
      */
-    public function setAppName($app_name)
+    public function setContent($content)
     {
-        $this->container['app_name'] = $app_name;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets app_token
-     *
-     * @return string
-     */
-    public function getAppToken()
-    {
-        return $this->container['app_token'];
-    }
-
-    /**
-     * Sets app_token
-     *
-     * @param string $app_token app_token
-     *
-     * @return $this
-     */
-    public function setAppToken($app_token)
-    {
-        $this->container['app_token'] = $app_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets create_date
-     *
-     * @return \DateTime
-     */
-    public function getCreateDate()
-    {
-        return $this->container['create_date'];
-    }
-
-    /**
-     * Sets create_date
-     *
-     * @param \DateTime $create_date create_date
-     *
-     * @return $this
-     */
-    public function setCreateDate($create_date)
-    {
-        $this->container['create_date'] = $create_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_valid
+     * Gets first
      *
      * @return bool
      */
-    public function getIsValid()
+    public function getFirst()
     {
-        return $this->container['is_valid'];
+        return $this->container['first'];
     }
 
     /**
-     * Sets is_valid
+     * Sets first
      *
-     * @param bool $is_valid is_valid
+     * @param bool $first first
      *
      * @return $this
      */
-    public function setIsValid($is_valid)
+    public function setFirst($first)
     {
-        $this->container['is_valid'] = $is_valid;
+        $this->container['first'] = $first;
 
         return $this;
     }
 
     /**
-     * Gets tenant_name
+     * Gets last
      *
-     * @return string
+     * @return bool
      */
-    public function getTenantName()
+    public function getLast()
     {
-        return $this->container['tenant_name'];
+        return $this->container['last'];
     }
 
     /**
-     * Sets tenant_name
+     * Sets last
      *
-     * @param string $tenant_name tenant_name
+     * @param bool $last last
      *
      * @return $this
      */
-    public function setTenantName($tenant_name)
+    public function setLast($last)
     {
-        $this->container['tenant_name'] = $tenant_name;
+        $this->container['last'] = $last;
 
         return $this;
     }
 
     /**
-     * Gets update_date
+     * Gets number
      *
-     * @return \DateTime
+     * @return int
      */
-    public function getUpdateDate()
+    public function getNumber()
     {
-        return $this->container['update_date'];
+        return $this->container['number'];
     }
 
     /**
-     * Sets update_date
+     * Sets number
      *
-     * @param \DateTime $update_date update_date
+     * @param int $number number
      *
      * @return $this
      */
-    public function setUpdateDate($update_date)
+    public function setNumber($number)
     {
-        $this->container['update_date'] = $update_date;
+        $this->container['number'] = $number;
 
         return $this;
     }
 
     /**
-     * Gets username
+     * Gets number_of_elements
      *
-     * @return string
+     * @return int
      */
-    public function getUsername()
+    public function getNumberOfElements()
     {
-        return $this->container['username'];
+        return $this->container['number_of_elements'];
     }
 
     /**
-     * Sets username
+     * Sets number_of_elements
      *
-     * @param string $username username
+     * @param int $number_of_elements number_of_elements
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setNumberOfElements($number_of_elements)
     {
-        $this->container['username'] = $username;
+        $this->container['number_of_elements'] = $number_of_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets size
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /**
+     * Sets size
+     *
+     * @param int $size size
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     *
+     * @return \com\hydrogen\admin\Model\Sort[]
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     *
+     * @param \com\hydrogen\admin\Model\Sort[] $sort sort
+     *
+     * @return $this
+     */
+    public function setSort($sort)
+    {
+        $this->container['sort'] = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_elements
+     *
+     * @return int
+     */
+    public function getTotalElements()
+    {
+        return $this->container['total_elements'];
+    }
+
+    /**
+     * Sets total_elements
+     *
+     * @param int $total_elements total_elements
+     *
+     * @return $this
+     */
+    public function setTotalElements($total_elements)
+    {
+        $this->container['total_elements'] = $total_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     *
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     *
+     * @param int $total_pages total_pages
+     *
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }

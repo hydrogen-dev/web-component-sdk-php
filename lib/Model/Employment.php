@@ -1,6 +1,6 @@
 <?php
 /**
- * AppToken
+ * Employment
  *
  * PHP version 5
  *
@@ -9,7 +9,6 @@
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-
 /**
  * Hydrogen Admin API
  *
@@ -33,14 +32,15 @@ use \ArrayAccess;
 use \com\hydrogen\admin\ObjectSerializer;
 
 /**
- * AppToken Class Doc Comment
+ * Employment Class Doc Comment
  *
  * @category Class
+ * @description Employment Object
  * @package  com\hydrogen\admin
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AppToken implements ModelInterface, ArrayAccess
+class Employment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AppToken implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AppToken';
+    protected static $swaggerModelName = 'Employment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,10 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'app_name' => 'string',
-        'app_token' => 'string',
-        'create_date' => '\DateTime',
-        'id' => 'string',
-        'is_valid' => 'bool',
-        'tenant_name' => 'string',
-        'update_date' => '\DateTime',
-        'username' => 'string'
+        'employer' => 'string',
+        'employment_status' => 'string',
+        'job_title' => 'string',
+        'occupation' => 'string'
     ];
 
     /**
@@ -73,14 +69,10 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'app_name' => null,
-        'app_token' => null,
-        'create_date' => 'date-time',
-        'id' => 'uuid',
-        'is_valid' => null,
-        'tenant_name' => null,
-        'update_date' => 'date-time',
-        'username' => null
+        'employer' => null,
+        'employment_status' => null,
+        'job_title' => null,
+        'occupation' => null
     ];
 
     /**
@@ -110,14 +102,10 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_name' => 'app_name',
-        'app_token' => 'app_token',
-        'create_date' => 'create_date',
-        'id' => 'id',
-        'is_valid' => 'is_valid',
-        'tenant_name' => 'tenant_name',
-        'update_date' => 'update_date',
-        'username' => 'username'
+        'employer' => 'employer',
+        'employment_status' => 'employment_status',
+        'job_title' => 'job_title',
+        'occupation' => 'occupation'
     ];
 
     /**
@@ -126,14 +114,10 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_name' => 'setAppName',
-        'app_token' => 'setAppToken',
-        'create_date' => 'setCreateDate',
-        'id' => 'setId',
-        'is_valid' => 'setIsValid',
-        'tenant_name' => 'setTenantName',
-        'update_date' => 'setUpdateDate',
-        'username' => 'setUsername'
+        'employer' => 'setEmployer',
+        'employment_status' => 'setEmploymentStatus',
+        'job_title' => 'setJobTitle',
+        'occupation' => 'setOccupation'
     ];
 
     /**
@@ -142,14 +126,10 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_name' => 'getAppName',
-        'app_token' => 'getAppToken',
-        'create_date' => 'getCreateDate',
-        'id' => 'getId',
-        'is_valid' => 'getIsValid',
-        'tenant_name' => 'getTenantName',
-        'update_date' => 'getUpdateDate',
-        'username' => 'getUsername'
+        'employer' => 'getEmployer',
+        'employment_status' => 'getEmploymentStatus',
+        'job_title' => 'getJobTitle',
+        'occupation' => 'getOccupation'
     ];
 
     /**
@@ -212,14 +192,10 @@ class AppToken implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_name'] = isset($data['app_name']) ? $data['app_name'] : null;
-        $this->container['app_token'] = isset($data['app_token']) ? $data['app_token'] : null;
-        $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
-        $this->container['tenant_name'] = isset($data['tenant_name']) ? $data['tenant_name'] : null;
-        $this->container['update_date'] = isset($data['update_date']) ? $data['update_date'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['employer'] = isset($data['employer']) ? $data['employer'] : null;
+        $this->container['employment_status'] = isset($data['employment_status']) ? $data['employment_status'] : null;
+        $this->container['job_title'] = isset($data['job_title']) ? $data['job_title'] : null;
+        $this->container['occupation'] = isset($data['occupation']) ? $data['occupation'] : null;
     }
 
     /**
@@ -247,193 +223,97 @@ class AppToken implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets app_name
+     * Gets employer
      *
      * @return string
      */
-    public function getAppName()
+    public function getEmployer()
     {
-        return $this->container['app_name'];
+        return $this->container['employer'];
     }
 
     /**
-     * Sets app_name
+     * Sets employer
      *
-     * @param string $app_name app_name
+     * @param string $employer employer
      *
      * @return $this
      */
-    public function setAppName($app_name)
+    public function setEmployer($employer)
     {
-        $this->container['app_name'] = $app_name;
+        $this->container['employer'] = $employer;
 
         return $this;
     }
 
     /**
-     * Gets app_token
+     * Gets employment_status
      *
      * @return string
      */
-    public function getAppToken()
+    public function getEmploymentStatus()
     {
-        return $this->container['app_token'];
+        return $this->container['employment_status'];
     }
 
     /**
-     * Sets app_token
+     * Sets employment_status
      *
-     * @param string $app_token app_token
+     * @param string $employment_status employmentStatus
      *
      * @return $this
      */
-    public function setAppToken($app_token)
+    public function setEmploymentStatus($employment_status)
     {
-        $this->container['app_token'] = $app_token;
+        $this->container['employment_status'] = $employment_status;
 
         return $this;
     }
 
     /**
-     * Gets create_date
-     *
-     * @return \DateTime
-     */
-    public function getCreateDate()
-    {
-        return $this->container['create_date'];
-    }
-
-    /**
-     * Sets create_date
-     *
-     * @param \DateTime $create_date create_date
-     *
-     * @return $this
-     */
-    public function setCreateDate($create_date)
-    {
-        $this->container['create_date'] = $create_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
+     * Gets job_title
      *
      * @return string
      */
-    public function getId()
+    public function getJobTitle()
     {
-        return $this->container['id'];
+        return $this->container['job_title'];
     }
 
     /**
-     * Sets id
+     * Sets job_title
      *
-     * @param string $id id
+     * @param string $job_title jobTitle
      *
      * @return $this
      */
-    public function setId($id)
+    public function setJobTitle($job_title)
     {
-        $this->container['id'] = $id;
+        $this->container['job_title'] = $job_title;
 
         return $this;
     }
 
     /**
-     * Gets is_valid
-     *
-     * @return bool
-     */
-    public function getIsValid()
-    {
-        return $this->container['is_valid'];
-    }
-
-    /**
-     * Sets is_valid
-     *
-     * @param bool $is_valid is_valid
-     *
-     * @return $this
-     */
-    public function setIsValid($is_valid)
-    {
-        $this->container['is_valid'] = $is_valid;
-
-        return $this;
-    }
-
-    /**
-     * Gets tenant_name
+     * Gets occupation
      *
      * @return string
      */
-    public function getTenantName()
+    public function getOccupation()
     {
-        return $this->container['tenant_name'];
+        return $this->container['occupation'];
     }
 
     /**
-     * Sets tenant_name
+     * Sets occupation
      *
-     * @param string $tenant_name tenant_name
+     * @param string $occupation occupation
      *
      * @return $this
      */
-    public function setTenantName($tenant_name)
+    public function setOccupation($occupation)
     {
-        $this->container['tenant_name'] = $tenant_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets update_date
-     *
-     * @return \DateTime
-     */
-    public function getUpdateDate()
-    {
-        return $this->container['update_date'];
-    }
-
-    /**
-     * Sets update_date
-     *
-     * @param \DateTime $update_date update_date
-     *
-     * @return $this
-     */
-    public function setUpdateDate($update_date)
-    {
-        $this->container['update_date'] = $update_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->container['username'];
-    }
-
-    /**
-     * Sets username
-     *
-     * @param string $username username
-     *
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->container['username'] = $username;
+        $this->container['occupation'] = $occupation;
 
         return $this;
     }

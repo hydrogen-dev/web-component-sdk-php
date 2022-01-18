@@ -1,6 +1,6 @@
 <?php
 /**
- * AppToken
+ * CardAddress
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \com\hydrogen\admin\ObjectSerializer;
 
 /**
- * AppToken Class Doc Comment
+ * CardAddress Class Doc Comment
  *
  * @category Class
+ * @description CardAddress Object
  * @package  com\hydrogen\admin
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AppToken implements ModelInterface, ArrayAccess
+class CardAddress implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class AppToken implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AppToken';
+    protected static $swaggerModelName = 'CardAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +58,13 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'app_name' => 'string',
-        'app_token' => 'string',
-        'create_date' => '\DateTime',
-        'id' => 'string',
-        'is_valid' => 'bool',
-        'tenant_name' => 'string',
-        'update_date' => '\DateTime',
-        'username' => 'string'
+        'address_line1' => 'string',
+        'address_line2' => 'string',
+        'city' => 'string',
+        'country' => 'string',
+        'postalcode' => 'string',
+        'state' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -73,14 +73,13 @@ class AppToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'app_name' => null,
-        'app_token' => null,
-        'create_date' => 'date-time',
-        'id' => 'uuid',
-        'is_valid' => null,
-        'tenant_name' => null,
-        'update_date' => 'date-time',
-        'username' => null
+        'address_line1' => null,
+        'address_line2' => null,
+        'city' => null,
+        'country' => null,
+        'postalcode' => null,
+        'state' => null,
+        'type' => null
     ];
 
     /**
@@ -110,14 +109,13 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_name' => 'app_name',
-        'app_token' => 'app_token',
-        'create_date' => 'create_date',
-        'id' => 'id',
-        'is_valid' => 'is_valid',
-        'tenant_name' => 'tenant_name',
-        'update_date' => 'update_date',
-        'username' => 'username'
+        'address_line1' => 'address_line1',
+        'address_line2' => 'address_line2',
+        'city' => 'city',
+        'country' => 'country',
+        'postalcode' => 'postalcode',
+        'state' => 'state',
+        'type' => 'type'
     ];
 
     /**
@@ -126,14 +124,13 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_name' => 'setAppName',
-        'app_token' => 'setAppToken',
-        'create_date' => 'setCreateDate',
-        'id' => 'setId',
-        'is_valid' => 'setIsValid',
-        'tenant_name' => 'setTenantName',
-        'update_date' => 'setUpdateDate',
-        'username' => 'setUsername'
+        'address_line1' => 'setAddressLine1',
+        'address_line2' => 'setAddressLine2',
+        'city' => 'setCity',
+        'country' => 'setCountry',
+        'postalcode' => 'setPostalcode',
+        'state' => 'setState',
+        'type' => 'setType'
     ];
 
     /**
@@ -142,14 +139,13 @@ class AppToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_name' => 'getAppName',
-        'app_token' => 'getAppToken',
-        'create_date' => 'getCreateDate',
-        'id' => 'getId',
-        'is_valid' => 'getIsValid',
-        'tenant_name' => 'getTenantName',
-        'update_date' => 'getUpdateDate',
-        'username' => 'getUsername'
+        'address_line1' => 'getAddressLine1',
+        'address_line2' => 'getAddressLine2',
+        'city' => 'getCity',
+        'country' => 'getCountry',
+        'postalcode' => 'getPostalcode',
+        'state' => 'getState',
+        'type' => 'getType'
     ];
 
     /**
@@ -212,14 +208,13 @@ class AppToken implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_name'] = isset($data['app_name']) ? $data['app_name'] : null;
-        $this->container['app_token'] = isset($data['app_token']) ? $data['app_token'] : null;
-        $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
-        $this->container['tenant_name'] = isset($data['tenant_name']) ? $data['tenant_name'] : null;
-        $this->container['update_date'] = isset($data['update_date']) ? $data['update_date'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
+        $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['postalcode'] = isset($data['postalcode']) ? $data['postalcode'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -231,6 +226,21 @@ class AppToken implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['address_line1'] === null) {
+            $invalidProperties[] = "'address_line1' can't be null";
+        }
+        if ($this->container['city'] === null) {
+            $invalidProperties[] = "'city' can't be null";
+        }
+        if ($this->container['country'] === null) {
+            $invalidProperties[] = "'country' can't be null";
+        }
+        if ($this->container['state'] === null) {
+            $invalidProperties[] = "'state' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -247,193 +257,169 @@ class AppToken implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets app_name
+     * Gets address_line1
      *
      * @return string
      */
-    public function getAppName()
+    public function getAddressLine1()
     {
-        return $this->container['app_name'];
+        return $this->container['address_line1'];
     }
 
     /**
-     * Sets app_name
+     * Sets address_line1
      *
-     * @param string $app_name app_name
+     * @param string $address_line1 addressLine1
      *
      * @return $this
      */
-    public function setAppName($app_name)
+    public function setAddressLine1($address_line1)
     {
-        $this->container['app_name'] = $app_name;
+        $this->container['address_line1'] = $address_line1;
 
         return $this;
     }
 
     /**
-     * Gets app_token
+     * Gets address_line2
      *
      * @return string
      */
-    public function getAppToken()
+    public function getAddressLine2()
     {
-        return $this->container['app_token'];
+        return $this->container['address_line2'];
     }
 
     /**
-     * Sets app_token
+     * Sets address_line2
      *
-     * @param string $app_token app_token
+     * @param string $address_line2 addressLine2
      *
      * @return $this
      */
-    public function setAppToken($app_token)
+    public function setAddressLine2($address_line2)
     {
-        $this->container['app_token'] = $app_token;
+        $this->container['address_line2'] = $address_line2;
 
         return $this;
     }
 
     /**
-     * Gets create_date
-     *
-     * @return \DateTime
-     */
-    public function getCreateDate()
-    {
-        return $this->container['create_date'];
-    }
-
-    /**
-     * Sets create_date
-     *
-     * @param \DateTime $create_date create_date
-     *
-     * @return $this
-     */
-    public function setCreateDate($create_date)
-    {
-        $this->container['create_date'] = $create_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
+     * Gets city
      *
      * @return string
      */
-    public function getId()
+    public function getCity()
     {
-        return $this->container['id'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets id
+     * Sets city
      *
-     * @param string $id id
+     * @param string $city city
      *
      * @return $this
      */
-    public function setId($id)
+    public function setCity($city)
     {
-        $this->container['id'] = $id;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets is_valid
-     *
-     * @return bool
-     */
-    public function getIsValid()
-    {
-        return $this->container['is_valid'];
-    }
-
-    /**
-     * Sets is_valid
-     *
-     * @param bool $is_valid is_valid
-     *
-     * @return $this
-     */
-    public function setIsValid($is_valid)
-    {
-        $this->container['is_valid'] = $is_valid;
-
-        return $this;
-    }
-
-    /**
-     * Gets tenant_name
+     * Gets country
      *
      * @return string
      */
-    public function getTenantName()
+    public function getCountry()
     {
-        return $this->container['tenant_name'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets tenant_name
+     * Sets country
      *
-     * @param string $tenant_name tenant_name
+     * @param string $country country
      *
      * @return $this
      */
-    public function setTenantName($tenant_name)
+    public function setCountry($country)
     {
-        $this->container['tenant_name'] = $tenant_name;
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets update_date
-     *
-     * @return \DateTime
-     */
-    public function getUpdateDate()
-    {
-        return $this->container['update_date'];
-    }
-
-    /**
-     * Sets update_date
-     *
-     * @param \DateTime $update_date update_date
-     *
-     * @return $this
-     */
-    public function setUpdateDate($update_date)
-    {
-        $this->container['update_date'] = $update_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets username
+     * Gets postalcode
      *
      * @return string
      */
-    public function getUsername()
+    public function getPostalcode()
     {
-        return $this->container['username'];
+        return $this->container['postalcode'];
     }
 
     /**
-     * Sets username
+     * Sets postalcode
      *
-     * @param string $username username
+     * @param string $postalcode postalcode
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setPostalcode($postalcode)
     {
-        $this->container['username'] = $username;
+        $this->container['postalcode'] = $postalcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string $state state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
