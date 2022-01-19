@@ -67,7 +67,7 @@ $attribMap = array (
 );
 
 
-$appTokenConfig['appName'] = array(array('app_name'=>'pfm_cash_flow', 'auth_type'=>'password_credentials'))
+$appTokenConfig['appName'] = array(array('app_name'=>'pfm_cash_flow', 'auth_type'=>'password_credentials'));
 $appTokenConfig['basePath'] = \com\hydrogen\admin\Environment::PRODUCTION;
 $appTokenConfig['userAccessToken'] = '';
 $appTokenConfig['attribMap'] = $attribMap;
