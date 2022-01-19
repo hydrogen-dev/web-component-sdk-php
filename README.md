@@ -7,6 +7,13 @@ PHP 5.5 and later
 
 ## Installation
 
+### Composer Installation 
+
+To install the composer package run:
+```
+composer require hydrogenplatform/app_token_api
+```
+
 ### Manual Installation
 
 Download the files and include `autoload.php`:
